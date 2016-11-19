@@ -1,0 +1,9 @@
+Hey 
+    <% unless user_signed_in? %>
+        unknown user<br><br>
+        <%= link_to "Sign-in", new_user_session_path %><br>
+        <%= link_to "Sign-up", new_user_registration_path %>
+    <% else %>
+        <%= current_user.email %><br><br>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    <% end %>
